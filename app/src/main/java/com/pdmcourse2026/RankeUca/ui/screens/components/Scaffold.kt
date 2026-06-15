@@ -1,4 +1,4 @@
-package com.pdmcourse2026.RankeUca.screens.components
+package com.pdmcourse2026.RankeUca.ui.screens.components
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.RowScope

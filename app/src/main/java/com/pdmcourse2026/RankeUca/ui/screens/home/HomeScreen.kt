@@ -1,4 +1,4 @@
-package com.pdmcourse2026.RankeUca.screens.home
+package com.pdmcourse2026.RankeUca.ui.screens.home
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.HowToVote
 import androidx.compose.material3.CircularProgressIndicator
@@ -23,10 +22,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.pdmcourse2026.RankeUca.screens.components.AppScaffold
-import com.pdmcourse2026.RankeUca.screens.components.ErrorScreen
-import com.pdmcourse2026.RankeUca.screens.components.OptionCard
+import com.pdmcourse2026.RankeUca.ui.screens.components.AppScaffold
+import com.pdmcourse2026.RankeUca.ui.screens.components.ErrorScreen
+import com.pdmcourse2026.RankeUca.ui.screens.components.OptionCard
 
+/*
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
@@ -95,11 +95,13 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)
           ) {
-            items(uiState.places) { place ->
+            items(uiState.options) { place ->
               OptionCard(
-                place = place,
-                onPlaceClick = { placeId -> homeViewModel.votePlace(placeId, onVoteSuccess = {})
-                  Toast.makeText(context, "Voto emitido!", Toast.LENGTH_SHORT).show()},
+                option = place,
+                onPlaceClick = { placeId ->
+                  homeViewModel.votePlace(placeId, onVoteSuccess = {})
+                  Toast.makeText(context, "Voto emitido!", Toast.LENGTH_SHORT).show()
+                },
                 isVoteScreen = false
               )
             }
@@ -108,4 +110,4 @@ fun HomeScreen(
       }
     }
   }
-}
+}*/

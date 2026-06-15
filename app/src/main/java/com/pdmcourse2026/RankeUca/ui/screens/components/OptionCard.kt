@@ -1,4 +1,4 @@
-package com.pdmcourse2026.RankeUca.screens.components
+package com.pdmcourse2026.RankeUca.ui.screens.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -15,35 +15,35 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.pdmcourse2026.RankeUca.models.Place
+import com.pdmcourse2026.RankeUca.models.Option
 
 @Composable
 fun OptionCard(
-    place : Place,
+    option : Option,
     onPlaceClick: (id: Int) -> Unit,
     isVoteScreen: Boolean = false
 ) {
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { onPlaceClick(place.id) },
+            .clickable { onPlaceClick(option.id) },
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults
             .elevatedCardElevation(defaultElevation = 4.dp)
     ) {
         Row() {
             AsyncImage(
-                model = place.imageUrl,
-                contentDescription = place.name,
+                model = option.imageUrl,
+                contentDescription = option.name,
                 modifier = Modifier
                     .size(90.dp)
                     .clip(RoundedCornerShape(8.dp)),
                 contentScale = ContentScale.Crop
             )
             Column() {
-                Text(text = place.name)
+                Text(text = option.name)
                 if(isVoteScreen) {
-                    Text(text = place.votes.toString())
+                    Text(text = option.votes.toString())
                 }
                 else {
                     Text(text = "Toca para votar")

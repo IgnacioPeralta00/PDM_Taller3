@@ -1,15 +1,16 @@
-package com.pdmcourse2026.RankeUca.screens.home
+package com.pdmcourse2026.RankeUca.ui.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.pdmcourse2026.RankeUca.data.repositories.PlaceApiRepository
-import com.pdmcourse2026.RankeUca.data.repositories.PlaceRepository
+import com.pdmcourse2026.RankeUca.data.repositories.OptionRepositoryImpl
+import com.pdmcourse2026.RankeUca.data.repositories.OptionRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
+/*
 class HomeViewModel : ViewModel() {
-    private val placesRepository : PlaceRepository = PlaceApiRepository()
+    private val placesRepository : OptionRepository = OptionRepositoryImpl()
     private val _uiState = MutableStateFlow(HomeUiState(loading = true))
     val uiState = _uiState.asStateFlow()
 
@@ -24,7 +25,7 @@ class HomeViewModel : ViewModel() {
             placesRepository.getPlaces()
                 .onSuccess { places ->
                     _uiState.value = _uiState.value.copy(
-                        places = places,
+                        options = places,
                         loading = false
                     )
                 }
@@ -43,7 +44,7 @@ class HomeViewModel : ViewModel() {
             placesRepository.getPlaces()
                 .onSuccess { places ->
                     _uiState.value = HomeUiState(
-                        places = places,
+                        options = places,
                         loading = false,
                         isRefreshing = false
                     )
@@ -75,4 +76,4 @@ class HomeViewModel : ViewModel() {
     }
 
 
-}
+}*/

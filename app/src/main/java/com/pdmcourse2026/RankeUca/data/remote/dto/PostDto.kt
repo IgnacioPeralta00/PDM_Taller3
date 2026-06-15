@@ -1,4 +1,4 @@
-package com.pdmcourse2026.RankeUca.data.api.dto
+package com.pdmcourse2026.RankeUca.data.remote.dto
 
 import kotlinx.serialization.Serializable
 

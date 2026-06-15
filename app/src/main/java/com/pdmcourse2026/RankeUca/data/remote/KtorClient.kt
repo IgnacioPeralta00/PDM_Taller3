@@ -1,4 +1,4 @@
-package com.pdmcourse2026.RankeUca.data.api
+package com.pdmcourse2026.RankeUca.data.remote
 
 import android.util.Log
 import com.pdmcourse2026.RankeUca.BuildConfig

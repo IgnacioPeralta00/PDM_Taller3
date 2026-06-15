@@ -1,8 +1,8 @@
 package com.pdmcourse2026.RankeUca.models
 
-data class Place(
-    val id: Int,
+data class Option(
+    val id: Int = 0,
     val name: String,
     val imageUrl: String,
-    val votes: Int
+    val votes: Int? = null
 )

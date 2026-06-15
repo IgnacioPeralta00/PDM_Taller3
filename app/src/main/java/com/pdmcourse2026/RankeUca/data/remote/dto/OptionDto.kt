@@ -1,18 +1,18 @@
-package com.pdmcourse2026.RankeUca.data.api.dto
+package com.pdmcourse2026.RankeUca.data.remote.dto
 
-import com.pdmcourse2026.RankeUca.models.Place
+import com.pdmcourse2026.RankeUca.models.Option
 import kotlinx.serialization.Serializable
 
 
 @Serializable
-data class PlaceDto(
+data class OptionDto(
     val id: Int,
     val name: String,
     val imageUrl: String,
     val votes: Int
 )
 
-fun PlaceDto.toModel() = Place(
+fun OptionDto.toModel() = Option(
     id = id,
     name = name,
     imageUrl = imageUrl,
