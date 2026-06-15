@@ -1,7 +1,7 @@
 package com.pdmcourse2026.RankeUca.data.local.mapper
 
 import com.pdmcourse2026.RankeUca.data.local.entities.OptionEntity
-import com.pdmcourse2026.RankeUca.models.Option
+import com.pdmcourse2026.RankeUca.domain.models.Option
 
 fun OptionEntity.toModel(): Option {
     return Option(
@@ -16,5 +16,6 @@ fun Option.toEntity(): OptionEntity {
         id = id,
         name = name,
         imageUrl = imageUrl,
+        questionId = questionId,
     )
 }

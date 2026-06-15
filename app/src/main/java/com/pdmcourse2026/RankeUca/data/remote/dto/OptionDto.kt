@@ -1,6 +1,6 @@
 package com.pdmcourse2026.RankeUca.data.remote.dto
 
-import com.pdmcourse2026.RankeUca.models.Option
+import com.pdmcourse2026.RankeUca.domain.models.Option
 import kotlinx.serialization.Serializable
 
 

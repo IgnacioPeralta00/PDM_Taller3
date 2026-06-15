@@ -15,7 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.pdmcourse2026.RankeUca.models.Option
+import com.pdmcourse2026.RankeUca.domain.models.Option
 
 @Composable
 fun OptionCard(

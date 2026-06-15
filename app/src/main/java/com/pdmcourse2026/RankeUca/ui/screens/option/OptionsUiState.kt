@@ -1,6 +1,6 @@
 package com.pdmcourse2026.RankeUca.ui.screens.option
 
-import com.pdmcourse2026.RankeUca.models.Option
+import com.pdmcourse2026.RankeUca.domain.models.Option
 
 data class OptionsUiState(
     val options : List<Option> = emptyList(),

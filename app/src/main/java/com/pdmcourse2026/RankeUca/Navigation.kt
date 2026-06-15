@@ -5,20 +5,25 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.pdmcourse2026.RankeUca.ui.screens.option.OptionsScreen
+import com.pdmcourse2026.RankeUca.ui.screens.question.QuestionScreen
 
 @Composable
 fun Navigator() {
-  val backStack = rememberNavBackStack(Routes.Home)
+  val backStack = rememberNavBackStack(Routes.Questions)
 
   NavDisplay(
     backStack = backStack,
     onBack = { backStack.removeLastOrNull() },
     entryProvider = entryProvider {
-      entry<Routes.Home> {
-        OptionsScreen()
+      entry<Routes.Questions> {
+        QuestionScreen(
+          onQuestionClick = { questionId ->
+            backStack.add(Routes.Options(questionId))
+          }
+        )
       }
-      entry<Routes.Votes> {
-        /**/
+      entry<Routes.Options> { key ->
+        OptionsScreen(key.id)
       }
     },
   )

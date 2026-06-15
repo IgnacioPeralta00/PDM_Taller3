@@ -1,6 +1,6 @@
 package com.pdmcourse2026.RankeUca.data.repositories
 
-import com.pdmcourse2026.RankeUca.models.Option
+import com.pdmcourse2026.RankeUca.domain.models.Option
 import kotlinx.coroutines.flow.Flow
 
 interface OptionRepository {
@@ -8,9 +8,9 @@ interface OptionRepository {
 
     suspend fun votePlace(placeId: Int): Result<Boolean>
 
-    fun getOptions(): Flow<List<Option>>
+    fun getOptions(questionId: Int): Flow<List<Option>>
 
-    suspend fun addOption(option: Option)
+    suspend fun addOption(name: String, imageUrl: String, questionId: Int)
 
     suspend fun deleteOption(option: Option)
 }

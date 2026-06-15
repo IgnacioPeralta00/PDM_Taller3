@@ -8,7 +8,7 @@ import com.pdmcourse2026.RankeUca.data.remote.dto.OptionDto
 import com.pdmcourse2026.RankeUca.data.remote.dto.PostRequestDto
 import com.pdmcourse2026.RankeUca.data.remote.dto.PostResponseDto
 import com.pdmcourse2026.RankeUca.data.remote.dto.toModel
-import com.pdmcourse2026.RankeUca.models.Option
+import com.pdmcourse2026.RankeUca.domain.models.Option
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.post
@@ -44,13 +44,14 @@ class OptionRepositoryImpl(
         }
     }
 
-    override fun getOptions(): Flow<List<Option>> {
-        return optionDao.getAllOptions().map { entities ->
+    override fun getOptions(questionId: Int): Flow<List<Option>> {
+        return optionDao.getOptionsForQuestion(questionId).map { entities ->
             entities.map { it.toModel() }
         }
     }
 
-    override suspend fun addOption(option: Option) {
+    override suspend fun addOption(name: String, imageUrl: String, questionId: Int) {
+        val option = Option(name = name, imageUrl = imageUrl, questionId = questionId)
         optionDao.insertOption(option.toEntity())
     }
 

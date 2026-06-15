@@ -1,8 +1,8 @@
-package com.pdmcourse2026.RankeUca.ui.screens.home
+package com.pdmcourse2026.RankeUca.ui.screens.question
 
-import com.pdmcourse2026.RankeUca.models.Option
+import com.pdmcourse2026.RankeUca.domain.models.Option
 
-data class HomeUiState(
+data class QuestionUiState(
     val options : List<Option> = emptyList(),
     val loading : Boolean = false,
     val error : String? = null,
