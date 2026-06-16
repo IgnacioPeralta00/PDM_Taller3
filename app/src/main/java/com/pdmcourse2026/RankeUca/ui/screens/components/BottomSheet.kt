@@ -41,7 +41,7 @@ fun BottomSheet(
             title = "Nueva opción",
             subtitle = "Agrega nombre e imagen para la lista.",
             onDismiss = onDismiss,
-            onSave = { onSaveForOption(name.trim(), imageUrl.trim()); onDismiss() },
+            onSave = { onSaveForOption(name.trim(), imageUrl.trim()) },
             saveEnabled = name.isNotBlank() && imageUrl.isNotBlank()
         ) {
             OutlinedTextField(
@@ -62,7 +62,7 @@ fun BottomSheet(
             title = "Nueva Pregunta",
             subtitle = "Agrega el título de la pregunta.",
             onDismiss = onDismiss,
-            onSave = { onSaveForQuestion(title.trim()); onDismiss() },
+            onSave = { onSaveForQuestion(title.trim()) },
             saveEnabled = title.isNotBlank()
         ) {
             OutlinedTextField(
@@ -120,12 +120,17 @@ private fun BaseBottomSheet(
             ) {
                 TextButton(
                     onClick = onDismiss
-                ) { Text("Cancelar") }
+                ) {
+                    Text("Cancelar")
+                }
                 Spacer(modifier = Modifier.width(8.dp))
+
                 Button(
                     onClick = onSave,
                     enabled = saveEnabled
-                ) { Text("Guardar") }
+                ) {
+                    Text("Guardar")
+                }
             }
         }
     }

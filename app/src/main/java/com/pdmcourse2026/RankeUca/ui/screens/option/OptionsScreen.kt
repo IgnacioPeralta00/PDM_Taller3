@@ -152,6 +152,7 @@ fun OptionsScreen(
         BottomSheet(
             onSaveForOption = { name, imageUrl ->
                 viewModel.addOption(name, imageUrl)
+                showSheet = false
             },
             onDismiss = { showSheet = false },
             onSaveForQuestion = { _, -> },

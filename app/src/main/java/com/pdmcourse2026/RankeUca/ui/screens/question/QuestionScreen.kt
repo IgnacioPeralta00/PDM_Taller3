@@ -140,6 +140,7 @@ fun QuestionScreen(
         BottomSheet(
             onSaveForQuestion = { title ->
                 viewModel.addQuestion(title)
+                showSheet = false
             },
             isOption = false,
             onDismiss = { showSheet = false },
