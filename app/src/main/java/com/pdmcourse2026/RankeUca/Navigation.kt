@@ -23,7 +23,10 @@ fun Navigator() {
         )
       }
       entry<Routes.Options> { key ->
-        OptionsScreen(key.id)
+        OptionsScreen(
+          questionId = key.id,
+          onBackClick = { backStack.removeLastOrNull() }
+        )
       }
     },
   )

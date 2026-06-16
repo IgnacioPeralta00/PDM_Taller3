@@ -12,6 +12,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.DeleteOutline
 import androidx.compose.material.icons.filled.Inbox
 import androidx.compose.material3.ElevatedCard
@@ -42,9 +43,10 @@ import com.pdmcourse2026.RankeUca.ui.screens.components.OptionBottomSheet
 @Composable
 fun OptionsScreen(
     questionId: Int,
+    onBackClick: () -> Unit,
     viewModel: OptionsViewModel = viewModel(
-        factory = OptionsViewModel.provideFactory(questionId
-        )
+        key = questionId.toString(),
+        factory = OptionsViewModel.provideFactory(questionId)
     )
 ) {
     val options by viewModel.options.collectAsStateWithLifecycle()
@@ -60,6 +62,15 @@ fun OptionsScreen(
                         Icon(imageVector = Icons.Default.Add, contentDescription = "Nueva opción")
                         Spacer(modifier = Modifier.width(4.dp))
                         Text("Nuevo")
+                    }
+                },
+                navigationIcon = {
+                    IconButton(onClick = { onBackClick() }) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBackIosNew,
+                            contentDescription = "Atrás",
+                            tint = MaterialTheme.colorScheme.onPrimary
+                        )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(

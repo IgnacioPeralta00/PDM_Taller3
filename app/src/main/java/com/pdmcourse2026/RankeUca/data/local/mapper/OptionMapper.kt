@@ -8,6 +8,7 @@ fun OptionEntity.toModel(): Option {
         id = id,
         name = name,
         imageUrl = imageUrl,
+        questionId = questionId,
     )
 }
 
