@@ -36,7 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.pdmcourse2026.RankeUca.ui.screens.components.OptionBottomSheet
+import com.pdmcourse2026.RankeUca.ui.screens.components.BottomSheet
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -149,7 +149,7 @@ fun OptionsScreen(
     }
 
     if (showSheet) {
-        OptionBottomSheet(
+        BottomSheet(
             onSaveForOption = { name, imageUrl ->
                 viewModel.addOption(name, imageUrl)
             },

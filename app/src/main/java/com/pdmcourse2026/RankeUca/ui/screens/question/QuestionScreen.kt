@@ -36,7 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.pdmcourse2026.RankeUca.ui.screens.components.OptionBottomSheet
+import com.pdmcourse2026.RankeUca.ui.screens.components.BottomSheet
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -114,7 +114,7 @@ fun QuestionScreen(
                                 },
                                 supportingContent = {
                                     Text(
-                                        text = question.optionCount.toString(),
+                                        text = "Options count: ${question.optionCount}",
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
@@ -137,7 +137,7 @@ fun QuestionScreen(
     }
 
     if (showSheet) {
-        OptionBottomSheet(
+        BottomSheet(
             onSaveForQuestion = { title ->
                 viewModel.addQuestion(title)
             },
